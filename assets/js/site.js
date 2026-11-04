@@ -3,6 +3,7 @@
   const root = document.documentElement;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer = window.matchMedia('(pointer: fine)').matches;
+  let motionOff = root.classList.contains('motion-off');
   // Safety net: if entrance animations stall (a page first painted late or in the background),
   // drop them so headlines and hero content are never left invisible.
   if (root.classList.contains('intro')) setTimeout(() => root.classList.remove('intro'), 2200);
@@ -294,7 +295,7 @@
       draw();
     }
     function start() {
-      if (!live || !visible || running || document.hidden) return;
+      if (!live || !visible || running || document.hidden || motionOff) return;
       running = true;
       last = performance.now();
       frame = requestAnimationFrame(loop);
@@ -326,6 +327,7 @@
       start();
     }
     document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); else start(); });
+    document.addEventListener('mk-motion', () => { if (motionOff) stop(); else start(); });
     if (finePointer && zone) {
       zone.addEventListener('pointermove', (event) => {
         const rect = canvas.getBoundingClientRect();
@@ -337,6 +339,97 @@
     }
   }
   document.querySelectorAll('canvas.topo').forEach((canvas, index) => contourMap(canvas, index));
+
+  /* ---------- Pause button for the moving backgrounds (the choice is remembered) ---------- */
+  function syncMotionButtons() {
+    const label = motionOff ? 'Play background animation' : 'Pause background animation';
+    document.querySelectorAll('[data-motion-toggle]').forEach((btn) => {
+      btn.setAttribute('aria-label', label);
+      btn.title = label;
+    });
+  }
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('[data-motion-toggle]')) return;
+    motionOff = !motionOff;
+    root.classList.toggle('motion-off', motionOff);
+    store.set('mk-motion', motionOff ? 'off' : 'on');
+    syncMotionButtons();
+    document.dispatchEvent(new Event('mk-motion'));
+  });
+  syncMotionButtons();
+
+  /* ---------- Hero photographs ----------
+     Cross-fades between the energy, mining and safety photos, in step with the three cards.
+     Only the first photo loads with the page; the others follow once it has finished. */
+  const slides = [...document.querySelectorAll('.hero-slides .ph')];
+  const slideLinks = [...document.querySelectorAll('[data-slide-link]')];
+  if (slides.length > 1 && slides.length === slideLinks.length) {
+    const SLIDE_MS = 7000;
+    const stats = slideLinks[0].closest('.hero-stats');
+    let current = 0;
+    let timer = 0;
+    let held = false;
+    let ready = false;
+    let inView = true;
+
+    const fetchSlide = (slide) => {
+      slide.querySelectorAll('source[data-srcset]').forEach((source) => {
+        source.srcset = source.dataset.srcset;
+        source.removeAttribute('data-srcset');
+      });
+      const img = slide.querySelector('img');
+      if (img.dataset.src) {
+        img.srcset = img.dataset.srcset;
+        img.src = img.dataset.src;
+        img.removeAttribute('data-srcset');
+        img.removeAttribute('data-src');
+      }
+      const decoded = img.decode ? img.decode().catch(() => {}) : Promise.resolve();
+      return Promise.race([decoded, new Promise((resolve) => { setTimeout(resolve, 5000); })]);
+    };
+    const show = (index) => {
+      current = index;
+      slides.forEach((slide, i) => slide.classList.toggle('is-on', i === index));
+      slideLinks.forEach((link, i) => link.classList.toggle('is-on', i === index));
+    };
+    const schedule = () => {
+      clearTimeout(timer);
+      const running = ready && inView && !held && !motionOff && !reduceMotion && !document.hidden;
+      stats.classList.toggle('is-running', running);
+      if (running) timer = setTimeout(() => { show((current + 1) % slides.length); schedule(); }, SLIDE_MS);
+    };
+
+    // Pointing at or tabbing to a card shows its photo and holds it there
+    slideLinks.forEach((link, i) => {
+      const hold = () => {
+        held = true;
+        schedule();
+        fetchSlide(slides[i]).then(() => { if (held) show(i); });
+      };
+      const release = () => { held = false; schedule(); };
+      link.addEventListener('pointerenter', (event) => { if (event.pointerType === 'mouse') hold(); });
+      link.addEventListener('pointerleave', release);
+      link.addEventListener('focus', hold);
+      link.addEventListener('blur', release);
+    });
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((entries) => {
+        inView = entries[entries.length - 1].isIntersecting;
+        schedule();
+      }, { threshold: 0.1 }).observe(slides[0].closest('.stage'));
+    }
+    document.addEventListener('visibilitychange', schedule);
+    document.addEventListener('mk-motion', schedule);
+
+    const saveData = navigator.connection && navigator.connection.saveData;
+    const begin = () => {
+      if (reduceMotion || saveData) return;
+      Promise.all(slides.map(fetchSlide)).then(() => { ready = true; schedule(); });
+    };
+    if (document.readyState === 'complete') setTimeout(begin, 500);
+    else window.addEventListener('load', () => setTimeout(begin, 500));
+  }
 
   /* ---------- Stage glow follows the pointer ---------- */
   if (finePointer && !reduceMotion) {

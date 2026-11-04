@@ -23,9 +23,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&amp;family=Poppins:wght@500;800&amp;display=swap">
-<link rel="stylesheet" href="assets/css/site.css?v=5bc33ed0">
-<script>(function(){var d=document.documentElement;d.classList.add('js');try{var m=localStorage.getItem('mk-theme');if(m==='dark'||m==='light')d.setAttribute('data-mode',m);}catch(e){}if(document.visibilityState==='visible'&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))d.classList.add('intro');})();</script>
-<script src="assets/js/site.js?v=13ab5850" defer></script>
+<link rel="stylesheet" href="assets/css/site.css?v=a1566aac">
+<script>(function(){var d=document.documentElement;d.classList.add('js');try{var m=localStorage.getItem('mk-theme');if(m==='dark'||m==='light')d.setAttribute('data-mode',m);if(localStorage.getItem('mk-motion')==='off')d.classList.add('motion-off');}catch(e){}if(document.visibilityState==='visible'&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))d.classList.add('intro');})();</script>
+<script src="assets/js/site.js?v=691d9c40" defer></script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -88,8 +88,8 @@
 </div>
 <main id="main">
 <section class="page-head" aria-labelledby="page-title">
-  <div class="stage">
-    <canvas class="topo" data-topo="live" data-tone="blue" aria-hidden="true"></canvas>
+  <div class="stage has-photo">
+    <picture class="ph" style="--pos:100% 50%;--dim:0.86"><source media="(max-width: 767px)" srcset="assets/img/photos/land-rig-field-m.webp"><img src="assets/img/photos/land-rig-field-1400.webp" srcset="assets/img/photos/land-rig-field-1400.webp 1400w, assets/img/photos/land-rig-field-2000.webp 2000w" sizes="100vw" width="2000" height="1073" alt="" fetchpriority="high"></picture><span class="shade" aria-hidden="true"></span><canvas class="topo" data-topo="live" data-tone="blue" aria-hidden="true"></canvas>
     <div class="wrap page-head-inner">
       <nav class="crumbs load-in" aria-label="Breadcrumb"><a href="./">Home</a><span aria-hidden="true">/</span><span aria-current="page">About</span></nav>
       <h1 class="page-title" id="page-title">
@@ -98,6 +98,7 @@
       </h1>
       <p class="lead load-in" style="--delay:260ms">MK Energies (Private) Limited is an Islamabad-based energy and mining company. We explore, drill, mine and supply across oil and gas, LPG, petroleum and minerals.</p>
     </div>
+    <button class="motion-btn" type="button" data-motion-toggle aria-label="Pause background animation" title="Pause background animation"><svg class="i i-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8.5 5.5v13M15.5 5.5v13"/></svg><svg class="i i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 5.5v13l10.5-6.5z"/></svg></button>
   </div>
 </section>
 
@@ -110,13 +111,17 @@
       <p>Our <strong>energy division</strong> works in oil and gas exploration, drilling, LPG and gas distribution, and petroleum and energy services. Our <strong>mining division</strong> works in mineral exploration, mining and extraction, and mineral logistics.</p>
       <p>Both divisions share one leadership team, one safety system and one point of contact, so clients and partners deal with a single accountable company.</p>
     </div>
-    <ul class="facts" data-reveal style="--rd:120ms">
+    <div class="duo" data-reveal style="--rd:120ms">
+      <figure><img src="assets/img/photos/pipelines-forest-480.webp" srcset="assets/img/photos/pipelines-forest-480.webp 480w, assets/img/photos/pipelines-forest-800.webp 800w" sizes="(min-width: 1000px) 24vw, 50vw" width="800" height="1000" alt="Large pipelines running through forest" loading="lazy" decoding="async"><figcaption>Energy</figcaption></figure>
+      <figure><img src="assets/img/photos/open-pit-terraces-480.webp" srcset="assets/img/photos/open-pit-terraces-480.webp 480w, assets/img/photos/open-pit-terraces-800.webp 800w" sizes="(min-width: 1000px) 24vw, 50vw" width="800" height="1000" alt="Terraced open-pit mine seen from above" loading="lazy" decoding="async"><figcaption>Mining</figcaption></figure>
+    </div>
+  </div>
+  <div class="wrap facts-row"><ul class="facts" data-reveal>
       <li class="fact-tile dark"><b>2026</b><span>Year established</span></li>
       <li class="fact-tile"><b>2</b><span>Divisions: energy and mining</span></li>
       <li class="fact-tile"><b>7</b><span>Lines of business</span></li>
       <li class="fact-tile"><b>G-11</b><span>Head office, Islamabad</span></li>
-    </ul>
-  </div>
+    </ul></div>
 </section>
 
 <section class="section section-tint" aria-labelledby="values-title">
@@ -134,6 +139,15 @@
   </div>
 </section>
 
+<section class="band has-photo" aria-labelledby="band-title">
+  <picture class="ph" style="--pos:50% 50%;--dim:0.66"><source media="(max-width: 767px)" srcset="assets/img/photos/karakoram-river-valley-m.webp"><img src="assets/img/photos/karakoram-river-valley-1400.webp" srcset="assets/img/photos/karakoram-river-valley-1400.webp 1400w, assets/img/photos/karakoram-river-valley-2000.webp 2000w" sizes="100vw" width="2000" height="1333" alt="" loading="lazy" decoding="async"></picture><span class="shade" aria-hidden="true"></span><canvas class="topo" data-topo="static" data-tone="blue" aria-hidden="true"></canvas>
+  <div class="wrap band-copy" data-reveal>
+    <span class="eyebrow">Across Pakistan</span>
+    <h2 id="band-title">Rich ground, handled with care.</h2>
+    <p>Pakistan&rsquo;s mountains, deserts and plains hold energy and mineral resources the country needs. Our job is to develop them safely, responsibly and within the rules.</p>
+  </div>
+</section>
+
 <section class="section" aria-labelledby="divisions-title">
   <div class="wrap">
     <div class="section-head split-head" data-reveal>
@@ -142,6 +156,8 @@
     </div>
     <div class="divisions">
   <article class="division energy" data-reveal style="--rd:0ms">
+    <img class="division-photo" src="assets/img/photos/refinery-towers-dusk-720.webp" srcset="assets/img/photos/refinery-towers-dusk-720.webp 720w, assets/img/photos/refinery-towers-dusk-1200.webp 1200w" sizes="(min-width: 900px) 50vw, 100vw" width="1200" height="1437" alt="Refinery towers lit up at dusk" loading="lazy" decoding="async">
+    <span class="shade" aria-hidden="true"></span>
     <canvas class="topo" data-topo="static" data-tone="blue" aria-hidden="true"></canvas>
     <div class="division-top"><span class="division-ic"><svg class="i i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13.5 2.5l-9 11h6.5l-1 8 9-11.5h-6.5z"/></svg></span><span class="division-tag">Energy division</span></div>
     <h3>Oil, gas and energy, from exploration to supply.</h3>
@@ -149,6 +165,8 @@
     <ul class="division-list"><li><a href="services.html#exploration"><span>Oil &amp; Gas Exploration</span><svg class="i i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.5 12h15"/><path d="M13.5 6l6 6-6 6"/></svg></a></li><li><a href="services.html#drilling"><span>Drilling Services</span><svg class="i i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.5 12h15"/><path d="M13.5 6l6 6-6 6"/></svg></a></li><li><a href="services.html#lpg"><span>LPG &amp; Gas Distribution</span><svg class="i i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.5 12h15"/><path d="M13.5 6l6 6-6 6"/></svg></a></li><li><a href="services.html#petroleum"><span>Petroleum &amp; Energy Services</span><svg class="i i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.5 12h15"/><path d="M13.5 6l6 6-6 6"/></svg></a></li></ul>
   </article>
   <article class="division mining" data-reveal style="--rd:120ms">
+    <img class="division-photo" src="assets/img/photos/terraced-quarry-aerial-720.webp" srcset="assets/img/photos/terraced-quarry-aerial-720.webp 720w, assets/img/photos/terraced-quarry-aerial-1140.webp 1140w" sizes="(min-width: 900px) 50vw, 100vw" width="1140" height="1368" alt="Aerial view of a terraced open-pit quarry" loading="lazy" decoding="async">
+    <span class="shade" aria-hidden="true"></span>
     <canvas class="topo" data-topo="static" data-tone="green" aria-hidden="true"></canvas>
     <div class="division-top"><span class="division-ic"><svg class="i i-pick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.5 20l11-11.5"/><path d="M8.5 5.5c4-2.4 8.4-1.6 10.4.6 2.1 2 2.6 6.4.2 10.4"/></svg></span><span class="division-tag">Mining division</span></div>
     <h3>Minerals, from first survey to final haul.</h3>
@@ -189,8 +207,8 @@
 </section>
 
 <section class="cta-section" aria-labelledby="cta-title">
-  <div class="stage cta-stage" data-reveal data-copy-scope>
-    <canvas class="topo" data-topo="live" data-tone="blue" aria-hidden="true"></canvas>
+  <div class="stage cta-stage has-photo" data-reveal data-copy-scope>
+    <picture class="ph" style="--pos:50% 45%;--dim:0.78"><source media="(max-width: 767px)" srcset="assets/img/photos/pumpjack-golden-sunset-m.webp"><img src="assets/img/photos/pumpjack-golden-sunset-1400.webp" srcset="assets/img/photos/pumpjack-golden-sunset-1400.webp 1400w, assets/img/photos/pumpjack-golden-sunset-2000.webp 2000w" sizes="100vw" width="2000" height="1023" alt="" loading="lazy" decoding="async"></picture><span class="shade" aria-hidden="true"></span><canvas class="topo" data-topo="live" data-tone="blue" aria-hidden="true"></canvas>
     <div class="wrap cta-inner">
       <div class="cta-copy">
         <span class="eyebrow">Work with us</span>
@@ -239,7 +257,7 @@
       <text x="0" y="108" textLength="1000" lengthAdjust="spacingAndGlyphs" fill="url(#wordmark-fill)">MK ENERGIES</text>
     </svg>
     <div class="footer-bottom">
-      <span>&copy; <span data-year>2026</span> MK Energies (Private) Limited. All rights reserved.</span>
+      <span>&copy; <span data-year>2026</span> MK Energies (Private) Limited. All rights reserved. Photographs are illustrative.</span>
       <a class="to-top" href="#top">Back to top <svg class="i i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19.5v-15"/><path d="M6 10.5l6-6 6 6"/></svg></a>
     </div>
   </div>

@@ -23,9 +23,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&amp;family=Poppins:wght@500;800&amp;display=swap">
-<link rel="stylesheet" href="assets/css/site.css?v=5bc33ed0">
-<script>(function(){var d=document.documentElement;d.classList.add('js');try{var m=localStorage.getItem('mk-theme');if(m==='dark'||m==='light')d.setAttribute('data-mode',m);}catch(e){}if(document.visibilityState==='visible'&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))d.classList.add('intro');})();</script>
-<script src="assets/js/site.js?v=13ab5850" defer></script>
+<link rel="stylesheet" href="assets/css/site.css?v=a1566aac">
+<script>(function(){var d=document.documentElement;d.classList.add('js');try{var m=localStorage.getItem('mk-theme');if(m==='dark'||m==='light')d.setAttribute('data-mode',m);if(localStorage.getItem('mk-motion')==='off')d.classList.add('motion-off');}catch(e){}if(document.visibilityState==='visible'&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))d.classList.add('intro');})();</script>
+<script src="assets/js/site.js?v=691d9c40" defer></script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -88,8 +88,8 @@
 </div>
 <main id="main">
 <section class="page-head" aria-labelledby="page-title">
-  <div class="stage">
-    <canvas class="topo" data-topo="live" data-tone="blue" aria-hidden="true"></canvas>
+  <div class="stage has-photo">
+    <picture class="ph" style="--pos:50% 62%;--dim:1"><source media="(max-width: 767px)" srcset="assets/img/photos/islamabad-at-night-m.webp"><img src="assets/img/photos/islamabad-at-night-1400.webp" srcset="assets/img/photos/islamabad-at-night-1400.webp 1400w, assets/img/photos/islamabad-at-night-2000.webp 2000w" sizes="100vw" width="2000" height="1333" alt="" fetchpriority="high"></picture><span class="shade" aria-hidden="true"></span><canvas class="topo" data-topo="live" data-tone="blue" aria-hidden="true"></canvas>
     <div class="wrap page-head-inner">
       <nav class="crumbs load-in" aria-label="Breadcrumb"><a href="./">Home</a><span aria-hidden="true">/</span><span aria-current="page">Contact</span></nav>
       <h1 class="page-title" id="page-title">
@@ -102,6 +102,7 @@
         <a class="btn btn-glass" href="#enquiry">Send an enquiry</a>
       </div>
     </div>
+    <button class="motion-btn" type="button" data-motion-toggle aria-label="Pause background animation" title="Pause background animation"><svg class="i i-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8.5 5.5v13M15.5 5.5v13"/></svg><svg class="i i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 5.5v13l10.5-6.5z"/></svg></button>
   </div>
 </section>
 
@@ -246,8 +247,8 @@
 
 <section class="section" aria-labelledby="visit-title">
   <div class="wrap">
-    <div class="visit" data-reveal>
-      <canvas class="topo" data-topo="static" data-tone="green" aria-hidden="true"></canvas>
+    <div class="visit has-photo" data-reveal>
+      <picture class="ph" style="--pos:100% 28%;--dim:0.82"><source media="(max-width: 767px)" srcset="assets/img/photos/faisal-mosque-islamabad-m.webp"><img src="assets/img/photos/faisal-mosque-islamabad-1400.webp" srcset="assets/img/photos/faisal-mosque-islamabad-1400.webp 1400w, assets/img/photos/faisal-mosque-islamabad-2000.webp 2000w" sizes="100vw" width="2000" height="1095" alt="" loading="lazy" decoding="async"></picture><span class="shade" aria-hidden="true"></span><canvas class="topo" data-topo="static" data-tone="green" aria-hidden="true"></canvas>
       <div class="visit-copy">
         <span class="eyebrow">Visit us</span>
         <h2 class="h2" id="visit-title">Head office, Islamabad.</h2>
@@ -289,7 +290,7 @@
       <text x="0" y="108" textLength="1000" lengthAdjust="spacingAndGlyphs" fill="url(#wordmark-fill)">MK ENERGIES</text>
     </svg>
     <div class="footer-bottom">
-      <span>&copy; <span data-year>2026</span> MK Energies (Private) Limited. All rights reserved.</span>
+      <span>&copy; <span data-year>2026</span> MK Energies (Private) Limited. All rights reserved. Photographs are illustrative.</span>
       <a class="to-top" href="#top">Back to top <svg class="i i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19.5v-15"/><path d="M6 10.5l6-6 6 6"/></svg></a>
     </div>
   </div>

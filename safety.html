@@ -23,9 +23,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&amp;family=Poppins:wght@500;800&amp;display=swap">
-<link rel="stylesheet" href="assets/css/site.css?v=5bc33ed0">
-<script>(function(){var d=document.documentElement;d.classList.add('js');try{var m=localStorage.getItem('mk-theme');if(m==='dark'||m==='light')d.setAttribute('data-mode',m);}catch(e){}if(document.visibilityState==='visible'&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))d.classList.add('intro');})();</script>
-<script src="assets/js/site.js?v=13ab5850" defer></script>
+<link rel="stylesheet" href="assets/css/site.css?v=a1566aac">
+<script>(function(){var d=document.documentElement;d.classList.add('js');try{var m=localStorage.getItem('mk-theme');if(m==='dark'||m==='light')d.setAttribute('data-mode',m);if(localStorage.getItem('mk-motion')==='off')d.classList.add('motion-off');}catch(e){}if(document.visibilityState==='visible'&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))d.classList.add('intro');})();</script>
+<script src="assets/js/site.js?v=691d9c40" defer></script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -88,8 +88,8 @@
 </div>
 <main id="main">
 <section class="page-head" aria-labelledby="page-title">
-  <div class="stage">
-    <canvas class="topo" data-topo="live" data-tone="green" aria-hidden="true"></canvas>
+  <div class="stage has-photo">
+    <picture class="ph" style="--pos:70% 62%;--dim:0.7"><source media="(max-width: 767px)" srcset="assets/img/photos/red-hard-hat-m.webp"><img src="assets/img/photos/red-hard-hat-1400.webp" srcset="assets/img/photos/red-hard-hat-1400.webp 1400w, assets/img/photos/red-hard-hat-2000.webp 2000w" sizes="100vw" width="2000" height="1333" alt="" fetchpriority="high"></picture><span class="shade" aria-hidden="true"></span><canvas class="topo" data-topo="live" data-tone="green" aria-hidden="true"></canvas>
     <div class="wrap page-head-inner">
       <nav class="crumbs load-in" aria-label="Breadcrumb"><a href="./">Home</a><span aria-hidden="true">/</span><span aria-current="page">Safety &amp; HSE</span></nav>
       <h1 class="page-title" id="page-title">
@@ -103,6 +103,7 @@
         <li><a href="#lpg-safety"><svg class="i i-cylinder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 2.5h5v3h-5z"/><path d="M7 8.5a3 3 0 013-3h4a3 3 0 013 3V19a2.5 2.5 0 01-2.5 2.5h-5A2.5 2.5 0 017 19z"/><path d="M7 12h10M7 15.5h10"/></svg>LPG safety</a></li>
       </ul>
     </div>
+    <button class="motion-btn" type="button" data-motion-toggle aria-label="Pause background animation" title="Pause background animation"><svg class="i i-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8.5 5.5v13M15.5 5.5v13"/></svg><svg class="i i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 5.5v13l10.5-6.5z"/></svg></button>
   </div>
 </section>
 
@@ -112,7 +113,10 @@
       <div><span class="eyebrow">In practice</span><h2 class="h2" id="practice-title">How safety shows up in the work.</h2></div>
       <p class="lead">Four controls apply to every project in both divisions, from a survey crew to a drilling rig or a gas delivery.</p>
     </div>
-    <ul class="cards four"><li class="card" data-reveal style="--rd:0ms"><svg class="i i-gauge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.3 18.5a8.5 8.5 0 1115.4 0"/><path d="M12 13.5l4.2-4.6"/><circle cx="12" cy="13.5" r="1.4"/></svg><h3>Risk assessed first</h3><p>Every job starts with a documented risk assessment and a safe method of work.</p></li><li class="card" data-reveal style="--rd:90ms"><svg class="i i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="4.5" width="14" height="17" rx="2"/><path d="M9 4.5V3h6v1.5"/><path d="M8.8 13l2.3 2.3 4.2-4.4"/></svg><h3>Certified equipment</h3><p>Rigs, vehicles, storage and site equipment inspected and maintained to standard.</p></li><li class="card" data-reveal style="--rd:180ms"><svg class="i i-hardhat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.5 17h17"/><path d="M5 17a7 7 0 0114 0"/><path d="M10 10.6V7.5h4v3.1"/><path d="M3.5 17v1.8a1 1 0 001 1h15a1 1 0 001-1V17"/></svg><h3>Trained crews</h3><p>Staff, drivers and contractors trained and briefed for the work they do.</p></li><li class="card" data-reveal style="--rd:270ms"><svg class="i i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19.5C5 11 10.5 5 20 5c0 9.5-6 15-14.5 15"/><path d="M5 19.5c3-4 6-6.5 9-8.2"/></svg><h3>Environment protected</h3><p>Spill prevention, waste handling and site restoration planned before work starts.</p></li></ul>
+    <div class="practice">
+      <div class="practice-media" data-reveal><img src="assets/img/photos/workers-red-hard-hat-560.webp" srcset="assets/img/photos/workers-red-hard-hat-560.webp 560w, assets/img/photos/workers-red-hard-hat-900.webp 900w" sizes="(min-width: 1000px) 40vw, 100vw" width="900" height="800" alt="Site workers in orange high-visibility clothing, one in a red hard hat" loading="lazy" decoding="async"></div>
+      <ul class="cards two"><li class="card" data-reveal style="--rd:0ms"><svg class="i i-gauge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.3 18.5a8.5 8.5 0 1115.4 0"/><path d="M12 13.5l4.2-4.6"/><circle cx="12" cy="13.5" r="1.4"/></svg><h3>Risk assessed first</h3><p>Every job starts with a documented risk assessment and a safe method of work.</p></li><li class="card" data-reveal style="--rd:90ms"><svg class="i i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="4.5" width="14" height="17" rx="2"/><path d="M9 4.5V3h6v1.5"/><path d="M8.8 13l2.3 2.3 4.2-4.4"/></svg><h3>Certified equipment</h3><p>Rigs, vehicles, storage and site equipment inspected and maintained to standard.</p></li><li class="card" data-reveal style="--rd:180ms"><svg class="i i-hardhat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.5 17h17"/><path d="M5 17a7 7 0 0114 0"/><path d="M10 10.6V7.5h4v3.1"/><path d="M3.5 17v1.8a1 1 0 001 1h15a1 1 0 001-1V17"/></svg><h3>Trained crews</h3><p>Staff, drivers and contractors trained and briefed for the work they do.</p></li><li class="card" data-reveal style="--rd:270ms"><svg class="i i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19.5C5 11 10.5 5 20 5c0 9.5-6 15-14.5 15"/><path d="M5 19.5c3-4 6-6.5 9-8.2"/></svg><h3>Environment protected</h3><p>Spill prevention, waste handling and site restoration planned before work starts.</p></li></ul>
+    </div>
   </div>
 </section>
 
@@ -135,6 +139,7 @@
     </div>
     <div class="tips">
       <div class="tip-panel" data-reveal>
+        <div class="tip-media"><img src="assets/img/photos/gas-stove-flame-wide-640.webp" srcset="assets/img/photos/gas-stove-flame-wide-640.webp 640w, assets/img/photos/gas-stove-flame-wide-1000.webp 1000w" sizes="(min-width: 900px) 50vw, 100vw" width="1000" height="438" alt="Blue flames on a gas stove burner" loading="lazy" decoding="async"></div>
         <h3>Everyday safety</h3>
         <ul class="checklist">
           <li><svg class="i i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.5 12.5l5 5 10-11"/></svg><span>Keep cylinders upright, in a well-ventilated place, away from heat and open flames.</span></li>
@@ -160,8 +165,8 @@
 </section>
 
 <section class="cta-section" aria-labelledby="cta-title">
-  <div class="stage cta-stage" data-reveal data-copy-scope>
-    <canvas class="topo" data-topo="live" data-tone="blue" aria-hidden="true"></canvas>
+  <div class="stage cta-stage has-photo" data-reveal data-copy-scope>
+    <picture class="ph" style="--pos:50% 45%;--dim:0.78"><source media="(max-width: 767px)" srcset="assets/img/photos/pumpjack-golden-sunset-m.webp"><img src="assets/img/photos/pumpjack-golden-sunset-1400.webp" srcset="assets/img/photos/pumpjack-golden-sunset-1400.webp 1400w, assets/img/photos/pumpjack-golden-sunset-2000.webp 2000w" sizes="100vw" width="2000" height="1023" alt="" loading="lazy" decoding="async"></picture><span class="shade" aria-hidden="true"></span><canvas class="topo" data-topo="live" data-tone="blue" aria-hidden="true"></canvas>
     <div class="wrap cta-inner">
       <div class="cta-copy">
         <span class="eyebrow">Talk to us</span>
@@ -210,7 +215,7 @@
       <text x="0" y="108" textLength="1000" lengthAdjust="spacingAndGlyphs" fill="url(#wordmark-fill)">MK ENERGIES</text>
     </svg>
     <div class="footer-bottom">
-      <span>&copy; <span data-year>2026</span> MK Energies (Private) Limited. All rights reserved.</span>
+      <span>&copy; <span data-year>2026</span> MK Energies (Private) Limited. All rights reserved. Photographs are illustrative.</span>
       <a class="to-top" href="#top">Back to top <svg class="i i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19.5v-15"/><path d="M6 10.5l6-6 6 6"/></svg></a>
     </div>
   </div>
